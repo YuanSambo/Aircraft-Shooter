@@ -5,7 +5,7 @@
 		<Option title="SFML_ShootEmUp"/>
 		<Option makefile_is_custom="1"/>
 		<Option compiler="gcc"/>
-		<Option virtualFolders="CMake Files\;CMake Files\SFML-2.5.1\;CMake Files\SFML-2.5.1\build\;"/>
+		<Option virtualFolders="CMake Files\;CMake Files\..\;CMake Files\..\..\;CMake Files\..\..\..\;CMake Files\..\..\..\..\;CMake Files\..\..\..\..\..\;CMake Files\..\..\..\..\..\Library\;CMake Files\..\..\..\..\..\Library\Frameworks\;CMake Files\..\..\..\..\..\Library\Frameworks\SFML.framework\;CMake Files\..\..\..\..\..\Library\Frameworks\SFML.framework\Resources\;CMake Files\..\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\;"/>
 		<Build>
 			<Target title="all">
 				<Option working_dir="/Users/Yuan/Programming/C++/SFML-ShootEmUp/cmake-build-debug"/>
@@ -44,7 +44,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/Yuan/Programming/C++/SFML/sfml-2.5.1/include"/>
+					<Add directory="/Library/Frameworks/SFML.framework"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -66,7 +66,7 @@
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/Yuan/Programming/C++/SFML/sfml-2.5.1/include"/>
+					<Add directory="/Library/Frameworks/SFML.framework"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/include/c++/v1"/>
 					<Add directory="/usr/local/include"/>
 					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/10.0.1/include"/>
@@ -94,17 +94,20 @@
 		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
-		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/SFML-2.5.1/build/SFMLConfig.cmake">
-			<Option virtualFolder="CMake Files\SFML-2.5.1\build\"/>
+		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/../../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLConfig.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
 		</Unit>
-		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/SFML-2.5.1/build/SFMLConfigDependencies.cmake">
-			<Option virtualFolder="CMake Files\SFML-2.5.1\build\"/>
+		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/../../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLConfigDependencies.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
 		</Unit>
-		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/SFML-2.5.1/build/SFMLConfigVersion.cmake">
-			<Option virtualFolder="CMake Files\SFML-2.5.1\build\"/>
+		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/../../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLConfigVersion.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
 		</Unit>
-		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/SFML-2.5.1/build/SFMLSharedTargets.cmake">
-			<Option virtualFolder="CMake Files\SFML-2.5.1\build\"/>
+		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/../../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLSharedTargets-release.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/../../../../../Library/Frameworks/SFML.framework/Resources/CMake/SFMLSharedTargets.cmake">
+			<Option virtualFolder="CMake Files\..\..\..\..\..\Library\Frameworks\SFML.framework\Resources\CMake\"/>
 		</Unit>
 	</Project>
 </CodeBlocks_project_file>
