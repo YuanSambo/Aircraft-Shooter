@@ -11,10 +11,13 @@
 
 class Game {
 public:
-                    Game();
+
+    static  Game* instance();
     void            run();
 
 private:
+                        Game();
+    static Game*        m_instance;
     static const float PlayerSpeed;
     static const sf::Time TimePerFrame;
 
@@ -34,7 +37,6 @@ private:
 
 
 private:
-
 
     void        processEvents();
     void        update(sf::Time deltaTime);

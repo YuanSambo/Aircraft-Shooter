@@ -9,9 +9,10 @@
 
 const float Game::PlayerSpeed =100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f/60.f);
+Game* Game:: m_instance = nullptr;
 
 Game::Game()
-:   m_window(sf::VideoMode(640, 480), "SFML Application")
+:   m_window(sf::VideoMode(640, 480), "Aircraft Shooter")
     ,m_texture()
     ,m_player()
     ,m_font()
@@ -41,7 +42,6 @@ Game::Game()
 }
 
 void Game::run() {
-
     sf:: Clock clock;
     sf::Time timeSinceLastUpdate = sf::Time::Zero;
     while (m_window.isOpen()) {
@@ -143,4 +143,13 @@ void Game::updateStatistics(sf::Time deltaTime) {
 
     }
 
+}
+
+
+Game *Game::instance() {
+
+    if(Game::m_instance == nullptr)
+        m_instance = new Game();
+
+    return m_instance;
 }
