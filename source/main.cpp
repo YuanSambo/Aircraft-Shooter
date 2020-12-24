@@ -1,5 +1,4 @@
-//
-//  Game.cpp
+//  main.cpp
 //  Aircraft-Shooter
 //
 //  Created by Yuan Sambo on 23/12/2020.
