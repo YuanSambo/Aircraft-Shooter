@@ -1,13 +1,13 @@
 ///////////////////////////////////////////////////////////////
 //  ResourceManager.hpp
-//  SFML_ShootEmUp
+//  Aircraft-Shooter
 //  
 //  Created by Yuan Sambo on 25/12/2020                         
 //  Copyright (c) 2020 Yuan Sambo. All rights reserved.     
 ////////////////////////////////////////////////////////////////
 
-#ifndef SFML_SHOOTEMUP_RESOURCEMANAGER_HPP
-#define SFML_SHOOTEMUP_RESOURCEMANAGER_HPP
+#ifndef AIRCRAFT_SHOOTER_RESOURCEMANAGER_HPP
+#define AIRCRAFT_SHOOTER_RESOURCEMANAGER_HPP
 
 #include <map>
 #include <string>
@@ -67,4 +67,4 @@ private:
 };
 
 #include "ResourceManager.inl"
-#endif  // SFML_SHOOTEMUP_RESOURCEMANAGER_HPP
+#endif  // AIRCRAFT_SHOOTER_RESOURCEMANAGER_HPP

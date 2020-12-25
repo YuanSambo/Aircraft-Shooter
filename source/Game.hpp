@@ -1,13 +1,13 @@
 ///////////////////////////////////////////////////////////////
 //  Game.hpp
-//  SFML_ShootEmUp
+//  Aircraft-Shooter
 //
 //  Created by Yuan Sambo on 23/12/2020
 //  Copyright (c) 2020 Yuan Sambo All rights reserved.
 ////////////////////////////////////////////////////////////////
 
-#ifndef SFML_SHOOTEMUP_GAME_HPP
-#define SFML_SHOOTEMUP_GAME_HPP
+#ifndef AIRCRAFT_SHOOTER_GAME_HPP
+#define AIRCRAFT_SHOOTER_GAME_HPP
 
 namespace Textures{
     enum ID{
@@ -98,4 +98,4 @@ private:
 
 };
 
-#endif  //SFML_SHOOTEMUP_GAME_HPP
+#endif  //AIRCRAFT_SHOOTER_GAME_HPP

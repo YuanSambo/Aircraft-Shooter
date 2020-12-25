@@ -1,6 +1,6 @@
 ///////////////////////////////////////////////////////////////
 //  ResourceManager.inl
-//  SFML_ShootEmUp
+//  Aircraft-Shooter
 //
 //  Created by Yuan Sambo on 25/12/2020
 //  Copyright (c) 2020 Yuan Sambo All rights reserved.
