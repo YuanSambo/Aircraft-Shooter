@@ -7,7 +7,9 @@ set(SFML_DIR "./SFML-2.5.1/build")
 
 set(SOURCE ${CMAKE_SOURCE_DIR}/source/main.cpp
            ${CMAKE_SOURCE_DIR}/source/Game.cpp
-           ${CMAKE_SOURCE_DIR}/source/Game.hpp)
+           ${CMAKE_SOURCE_DIR}/source/Game.hpp
+           ${CMAKE_SOURCE_DIR}/source/ResourceManager.hpp
+           ${CMAKE_SOURCE_DIR}/source/ResourceManager.inl)
 
 
 add_executable(${PROJECT_NAME} ${SOURCE})

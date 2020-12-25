@@ -1,44 +1,64 @@
+///////////////////////////////////////////////////////////////
 //  Game.cpp
-//  Aircraft-Shooter
+//  SFML_ShootEmUp
 //
-//  Created by Yuan Sambo on 23/12/2020.
-//  Copyright © 2020 Yuan Sambo. All rights reserved.
-//
-#include <iostream>
+//  Created by Yuan Sambo on 23/12/2020
+//  Copyright (c) 2020 Yuan Sambo All rights reserved.
+////////////////////////////////////////////////////////////////
+
 #include "Game.hpp"
+
 
 const float Game::PlayerSpeed =100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f/60.f);
 Game* Game:: m_instance = nullptr;
 
 Game::Game()
-:   m_window(sf::VideoMode(640, 480), "Aircraft Shooter")
-    ,m_texture()
-    ,m_player()
-    ,m_font()
-    ,m_statisticsText()
-    ,m_statisticsNumFrames(0)
-    ,m_statisticsUpdateTime()
-    ,mIsMovingLeft(false)
-    ,mIsMovingRight(false)
-    ,mIsMovingUp(false)
-    ,mIsMovingDown(false)
+: m_window(sf::VideoMode(640, 480), "Aircraft Shooter",sf::Style::Close)
+    , m_texture()
+    , m_player()
+    , m_font()
+    , m_textureManager()
+    , m_fontManager()
+    , m_statisticsText()
+    , m_statisticsNumFrames(0)
+    , m_statisticsUpdateTime()
+    , mIsMovingLeft(false)
+    , mIsMovingRight(false)
+    , mIsMovingUp(false)
+    , mIsMovingDown(false)
+
     {
 
-    // Handles loading file errors.
-   if(!m_texture.loadFromFile("res/Textures/Eagle.png"))
-       printf("Error loading player sprite.");
-   if(!m_font.loadFromFile("res/Fonts/Sansation.ttf"))
-       printf("Error loading font.");
+    try{
+
+        m_textureManager.load(Textures::Airplane, "res/Textures/Eagle.png");
+        m_fontManager.load(Fonts::Sansation,"res/Fonts/Sansation.ttf");
+
+    } catch (std::runtime_error& e) {
+
+        printf("Exception %s \n",e.what());
+
+    }
+
+
 
    m_window.setFramerateLimit(60);
 
-   m_player.setTexture(m_texture);
-   m_player.setPosition((640.f/2)-m_texture.getSize().x,(480.f/2)-m_texture.getSize().y);
+   m_player.setTexture(m_textureManager.get(Textures::Airplane));
+   m_player.setPosition(270.f,200.f);
 
-   m_statisticsText.setFont(m_font);
+   m_statisticsText.setFont(m_fontManager.get(Fonts::Sansation));
    m_statisticsText.setPosition(5.f,5.f);
    m_statisticsText.setCharacterSize(10);
+}
+
+Game* Game::instance() {
+
+    if(Game::m_instance == nullptr)
+        m_instance = new Game();
+
+    return m_instance;
 }
 
 void Game::run() {
@@ -63,6 +83,7 @@ void Game::run() {
     }
 }
 
+
 void Game::processEvents() {
 
     sf::Event event{};
@@ -82,7 +103,6 @@ void Game::processEvents() {
     }
 }
 
-// Updates the game logic
 void Game::update(sf::Time deltaTime) {
 
     // Player movement
@@ -101,8 +121,6 @@ void Game::update(sf::Time deltaTime) {
     m_player.move(movement*deltaTime.asSeconds());
 }
 
-
-// Renders the game on the screen
 void Game::render() {
 
     m_window.clear();
@@ -111,8 +129,6 @@ void Game::render() {
     m_window.display();
 }
 
-
-// Handles player input and controls.
 void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed) {
 
     // Player controls
@@ -126,7 +142,6 @@ void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed) {
         mIsMovingRight = isPressed;
 }
 
-// Computes  Frames Per Second
 void Game::updateStatistics(sf::Time deltaTime) {
 
     m_statisticsUpdateTime += deltaTime;
@@ -146,10 +161,3 @@ void Game::updateStatistics(sf::Time deltaTime) {
 }
 
 
-Game *Game::instance() {
-
-    if(Game::m_instance == nullptr)
-        m_instance = new Game();
-
-    return m_instance;
-}

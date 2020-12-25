@@ -88,6 +88,12 @@
 		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/source/Game.hpp">
 			<Option target="SFML_ShootEmUp"/>
 		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/source/ResourceManager.hpp">
+			<Option target="SFML_ShootEmUp"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/source/ResourceManager.inl">
+			<Option target="SFML_ShootEmUp"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/SFML-ShootEmUp/source/main.cpp">
 			<Option target="SFML_ShootEmUp"/>
 		</Unit>
