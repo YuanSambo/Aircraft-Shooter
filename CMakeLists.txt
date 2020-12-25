@@ -9,7 +9,9 @@ set(SOURCE ${CMAKE_SOURCE_DIR}/source/main.cpp
            ${CMAKE_SOURCE_DIR}/source/Game.cpp
            ${CMAKE_SOURCE_DIR}/source/Game.hpp
            ${CMAKE_SOURCE_DIR}/source/ResourceManager.hpp
-           ${CMAKE_SOURCE_DIR}/source/ResourceManager.inl)
+           ${CMAKE_SOURCE_DIR}/source/ResourceManager.inl
+           ${CMAKE_SOURCE_DIR}/source/FPSCounter.cpp
+           ${CMAKE_SOURCE_DIR}/source/FPSCounter.hpp)
 
 
 add_executable(${PROJECT_NAME} ${SOURCE})

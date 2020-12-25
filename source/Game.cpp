@@ -11,7 +11,7 @@
 
 const float Game::PlayerSpeed =100.f;
 const sf::Time Game::TimePerFrame = sf::seconds(1.f/60.f);
-Game* Game:: m_instance = nullptr;
+Game* Game:: Instance = nullptr;
 
 Game::Game()
 : m_window(sf::VideoMode(640, 480), "Aircraft Shooter",sf::Style::Close)
@@ -20,9 +20,8 @@ Game::Game()
     , m_font()
     , m_textureManager()
     , m_fontManager()
-    , m_statisticsText()
-    , m_statisticsNumFrames(0)
-    , m_statisticsUpdateTime()
+    , m_fpsText()
+    , m_fpsCounter()
     , mIsMovingLeft(false)
     , mIsMovingRight(false)
     , mIsMovingUp(false)
@@ -41,24 +40,25 @@ Game::Game()
 
     }
 
-
-
    m_window.setFramerateLimit(60);
 
    m_player.setTexture(m_textureManager.get(Textures::Airplane));
    m_player.setPosition(270.f,200.f);
 
-   m_statisticsText.setFont(m_fontManager.get(Fonts::Sansation));
-   m_statisticsText.setPosition(5.f,5.f);
-   m_statisticsText.setCharacterSize(10);
-}
+   m_fpsText.setFont(m_fontManager.get(Fonts::Sansation));
+   m_fpsText.setPosition(5.f, 5.f);
+   m_fpsText.setCharacterSize(10);
+
+   m_fpsCounter.setText(m_fpsText);
+
+    }
 
 Game* Game::instance() {
 
-    if(Game::m_instance == nullptr)
-        m_instance = new Game();
+    if(Game::Instance == nullptr)
+        Instance = new Game();
 
-    return m_instance;
+    return Instance;
 }
 
 void Game::run() {
@@ -78,7 +78,7 @@ void Game::run() {
         }
 
         processEvents();
-        updateStatistics(deltaTime);
+        m_fpsCounter.updateFrame(deltaTime);
         render();
     }
 }
@@ -120,15 +120,13 @@ void Game::update(sf::Time deltaTime) {
     // Applies movement to the player
     m_player.move(movement*deltaTime.asSeconds());
 }
-
 void Game::render() {
 
     m_window.clear();
     m_window.draw(m_player);
-    m_window.draw(m_statisticsText);
+    m_window.draw(m_fpsText);
     m_window.display();
 }
-
 void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed) {
 
     // Player controls
@@ -142,22 +140,6 @@ void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed) {
         mIsMovingRight = isPressed;
 }
 
-void Game::updateStatistics(sf::Time deltaTime) {
 
-    m_statisticsUpdateTime += deltaTime;
-    m_statisticsNumFrames += 1;
-
-    if (m_statisticsUpdateTime >= sf::seconds(1.0f)) {
-        m_statisticsText.setString(
-                "FPS = " + std::to_string(m_statisticsNumFrames) + "\n" +
-                "Time / Update = " + std::to_string(m_statisticsUpdateTime.asMicroseconds() / m_statisticsNumFrames) +
-                "us");
-
-        m_statisticsUpdateTime -= sf::seconds(1.0f);
-        m_statisticsNumFrames = 0;
-
-    }
-
-}
 
 

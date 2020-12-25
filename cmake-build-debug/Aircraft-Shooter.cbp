@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/FPSCounter.cpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/FPSCounter.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Game.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>

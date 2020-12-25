@@ -22,6 +22,7 @@ namespace Fonts{
 }
 #include <SFML/Graphics.hpp>
 #include "ResourceManager.hpp"
+#include "FPSCounter.hpp"
 
 //////////////////////////////////////////
 /// \brief Game engine
@@ -44,7 +45,7 @@ public:
 private:
 
                                  Game();
-    static Game*                m_instance;
+    static Game*                Instance;
     static const float          PlayerSpeed;
     static const sf::Time       TimePerFrame;
 
@@ -57,10 +58,11 @@ private:
     sf::Texture         m_texture;
     sf::Sprite          m_player;
     sf::Font            m_font;
-    sf::Text            m_statisticsText;
-    sf::Time            m_statisticsUpdateTime;
+    sf::Text            m_fpsText;
 
-    std::size_t         m_statisticsNumFrames;
+    yu::FPSCounter      m_fpsCounter;
+
+
     bool    mIsMovingUp;
     bool    mIsMovingDown;
     bool    mIsMovingRight;
@@ -90,11 +92,7 @@ private:
     /////////////////////////////////////////
     void        handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
 
-    //////////////////////////////////////////
-    /// \brief Updates the fps display
-    //  \param Elapsed time since the last frame.
-    /////////////////////////////////////////
-    void        updateStatistics(sf::Time deltaTime);
+
 
 };
 

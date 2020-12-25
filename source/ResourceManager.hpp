@@ -30,7 +30,7 @@ public:
     void                             load(Identifier id,const std::string& filename);
 
     ////////////////////////////////////////////
-    /// \brief Loads resource with two paramaters
+    /// \brief Loads resource with two parameters
     /// \param Enum id
     /// \param Filename of the resource
     /// \param Optional second parameter
