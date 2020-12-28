@@ -6,7 +6,7 @@
 //  Copyright (c) 2020 Yuan Sambo All rights reserved.     
 ////////////////////////////////////////////////////////////////
 
-#include "FPSCounter.hpp"
+#include "../include/FPSCounter.hpp"
 
 yu::FPSCounter::FPSCounter() :
      m_updateTime()
@@ -16,7 +16,7 @@ yu::FPSCounter::FPSCounter() :
 }
 
 
-void yu::FPSCounter::updateFrame(sf::Time deltaTime) {
+void yu::FPSCounter::updateFrame(const sf::Time deltaTime) {
     m_updateTime += deltaTime;
     m_frames += 1;
     if (m_updateTime >= sf::seconds(1.0f)) {

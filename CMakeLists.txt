@@ -7,11 +7,12 @@ set(SFML_DIR "SFML-2.5.1/build")
 
 set(SOURCE ${CMAKE_SOURCE_DIR}/source/main.cpp
            ${CMAKE_SOURCE_DIR}/source/Game.cpp
-           ${CMAKE_SOURCE_DIR}/source/Game.hpp
-           ${CMAKE_SOURCE_DIR}/source/ResourceManager.hpp
-           ${CMAKE_SOURCE_DIR}/source/ResourceManager.inl
            ${CMAKE_SOURCE_DIR}/source/FPSCounter.cpp
-           ${CMAKE_SOURCE_DIR}/source/FPSCounter.hpp)
+           ${CMAKE_SOURCE_DIR}/include/ResourceManager.hpp
+           ${CMAKE_SOURCE_DIR}/include/Game.hpp
+           ${CMAKE_SOURCE_DIR}/include/FPSCounter.hpp
+           ${CMAKE_SOURCE_DIR}/include/ResourceManager.inl
+       )
 
 
 add_executable(${PROJECT_NAME} ${SOURCE})

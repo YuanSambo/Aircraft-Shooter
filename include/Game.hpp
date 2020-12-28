@@ -38,13 +38,12 @@ public:
     static  Game* instance();
 
     //////////////////////////////////////////
-    /// \brief Starts the game.
+    /// \brief Starts the game loop.
     /////////////////////////////////////////
     void            run();
 
 private:
 
-                                 Game();
     static Game*                Instance;
     static const float          PlayerSpeed;
     static const sf::Time       TimePerFrame;
@@ -58,18 +57,28 @@ private:
     sf::Texture         m_texture;
     sf::Sprite          m_player;
     sf::Font            m_font;
-    sf::Text            m_fpsText;
+    sf::Text            m_fps;
 
     yu::FPSCounter      m_fpsCounter;
 
 
-    bool    mIsMovingUp;
-    bool    mIsMovingDown;
-    bool    mIsMovingRight;
-    bool    mIsMovingLeft;
+    bool    m_IsMovingUp;
+    bool    m_IsMovingDown;
+    bool    m_IsMovingRight;
+    bool    m_IsMovingLeft;
 
 
 private:
+
+    //////////////////////////////////////////
+    /// \brief Constructor
+    /////////////////////////////////////////
+                        Game();
+    //////////////////////////////////////////
+    /// \brief Destructor
+    /////////////////////////////////////////
+                        ~Game();
+
     //////////////////////////////////////////
     /// \brief Process the events inside the game.
     /////////////////////////////////////////
@@ -87,10 +96,16 @@ private:
     void        render();
 
     //////////////////////////////////////////
+    /// \brief Handles player keyboard input
     /// \param Pressed keyboard key.
     /// \param If the key is pressed.
     /////////////////////////////////////////
     void        handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
+
+    //////////////////////////////////////////
+    /// \brief Initialize objects
+    /////////////////////////////////////////
+    void        init();
 
 
 

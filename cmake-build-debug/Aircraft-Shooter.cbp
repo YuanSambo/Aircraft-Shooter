@@ -82,22 +82,22 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/FPSCounter.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Game.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/ResourceManager.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/ResourceManager.inl">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/FPSCounter.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
-		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/FPSCounter.hpp">
-			<Option target="Aircraft-Shooter"/>
-		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Game.cpp">
-			<Option target="Aircraft-Shooter"/>
-		</Unit>
-		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Game.hpp">
-			<Option target="Aircraft-Shooter"/>
-		</Unit>
-		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/ResourceManager.hpp">
-			<Option target="Aircraft-Shooter"/>
-		</Unit>
-		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/ResourceManager.inl">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/main.cpp">

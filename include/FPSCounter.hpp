@@ -33,7 +33,7 @@ namespace yu {
         /// \brief Updates the fps display
         //  \param Elapsed time since the last frame.
         /////////////////////////////////////////
-        void updateFrame(sf::Time deltaTime);
+        void updateFrame( sf::Time deltaTime);
 
 
     private:
