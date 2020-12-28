@@ -16,7 +16,8 @@ set(SOURCE  source/main.cpp
             include/FPSCounter.hpp
             include/ResourceManager.inl
             include/Entity.hpp
-            include/SceneNode.hpp)
+            include/SceneNode.hpp
+            include/ResourceIdentifiers.hpp)
 
 
 add_executable(${PROJECT_NAME} ${SOURCE})

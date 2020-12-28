@@ -9,22 +9,11 @@
 #ifndef AIRCRAFT_SHOOTER_GAME_HPP
 #define AIRCRAFT_SHOOTER_GAME_HPP
 
-namespace Textures{
 
-    enum ID{
-        Eagle,
-        Desert,
-    };
-}
-
-namespace Fonts{
-    enum ID{
-        Sansation,
-    };
-}
 #include <SFML/Graphics.hpp>
 #include "ResourceManager.hpp"
 #include "FPSCounter.hpp"
+#include "ResourceIdentifiers.hpp"
 
 //////////////////////////////////////////
 /// \brief Game engine
@@ -50,10 +39,8 @@ private:
     static const float          PlayerSpeed;
     static const sf::Time       TimePerFrame;
 
-    ResourceManager<sf::Texture
-    ,Textures::ID>              m_textureManager;
-    ResourceManager<sf::Font,
-    Fonts::ID>                  m_fontManager;
+    TextureManager             m_textureManager;
+    FontManager                m_fontManager;
 
     sf::RenderWindow    m_window;
     sf::Sprite          m_player;

@@ -91,6 +91,9 @@
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Game.hpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/ResourceIdentifiers.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/ResourceManager.hpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
