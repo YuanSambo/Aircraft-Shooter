@@ -5,14 +5,18 @@ set(CMAKE_CXX_STANDARD 17)
 set(SFML_DIR "SFML-2.5.1/build")
 
 
-set(SOURCE ${CMAKE_SOURCE_DIR}/source/main.cpp
-           ${CMAKE_SOURCE_DIR}/source/Game.cpp
-           ${CMAKE_SOURCE_DIR}/source/FPSCounter.cpp
-           ${CMAKE_SOURCE_DIR}/include/ResourceManager.hpp
-           ${CMAKE_SOURCE_DIR}/include/Game.hpp
-           ${CMAKE_SOURCE_DIR}/include/FPSCounter.hpp
-           ${CMAKE_SOURCE_DIR}/include/ResourceManager.inl
-       )
+set(SOURCE  source/main.cpp
+            source/Game.cpp
+            source/FPSCounter.cpp
+            source/Entity.cpp
+            source/SceneNode.cpp
+
+            include/ResourceManager.hpp
+            include/Game.hpp
+            include/FPSCounter.hpp
+            include/ResourceManager.inl
+            include/Entity.hpp
+            include/SceneNode.hpp)
 
 
 add_executable(${PROJECT_NAME} ${SOURCE})

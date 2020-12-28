@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Entity.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/FPSCounter.hpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
@@ -94,10 +97,19 @@
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/ResourceManager.inl">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/SceneNode.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Entity.cpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/FPSCounter.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Game.cpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/SceneNode.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/main.cpp">
