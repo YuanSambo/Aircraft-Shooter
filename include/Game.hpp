@@ -10,8 +10,10 @@
 #define AIRCRAFT_SHOOTER_GAME_HPP
 
 namespace Textures{
+
     enum ID{
-        Airplane,
+        Eagle,
+        Desert,
     };
 }
 
@@ -54,9 +56,8 @@ private:
     Fonts::ID>                  m_fontManager;
 
     sf::RenderWindow    m_window;
-    sf::Texture         m_texture;
     sf::Sprite          m_player;
-    sf::Font            m_font;
+    sf::Sprite          m_landScape;
     sf::Text            m_fps;
 
     yu::FPSCounter      m_fpsCounter;

@@ -25,7 +25,8 @@ Game::Game()
 void Game::init() {
 
     try{
-        m_textureManager.load(Textures::Airplane, "res/Textures/Eagle.png");
+        m_textureManager.load(Textures::Eagle, "res/Textures/Eagle.png");
+        m_textureManager.load(Textures::Desert,"res/Textures/Desert.png");
         m_fontManager.load(Fonts::Sansation,"res/Fonts/Sansation.ttf");
 
     } catch (std::runtime_error& e) {
@@ -37,8 +38,10 @@ void Game::init() {
     // Frame Limit
     m_window.setFramerateLimit(60);
 
-    m_player.setTexture(m_textureManager.get(Textures::Airplane));
+    m_player.setTexture(m_textureManager.get(Textures::Eagle));
     m_player.setPosition(270.f,200.f);
+
+    m_landScape.setTexture(m_textureManager.get(Textures::Desert));
 
     m_fps.setFont(m_fontManager.get(Fonts::Sansation));
     m_fps.setPosition(5.f, 5.f);
@@ -122,6 +125,7 @@ void Game::update(sf::Time deltaTime) {
 void Game::render() {
 
     m_window.clear();
+    m_window.draw(m_landScape);
     m_window.draw(m_player);
     m_window.draw(m_fps);
     m_window.display();
