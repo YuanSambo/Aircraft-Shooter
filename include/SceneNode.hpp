@@ -42,7 +42,7 @@ public:
 
 private:
 
-    virtual void        draw(sf::RenderTarget& target, sf::RenderStates states) const;
+    void        draw(sf::RenderTarget& target, sf::RenderStates states) const override;
     virtual void        drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const;
     void                drawChildren(sf::RenderTarget& target, sf::RenderStates states) const;
     std::vector<Ptr> m_children;

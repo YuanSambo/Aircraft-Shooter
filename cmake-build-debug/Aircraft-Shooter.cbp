@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Aircraft.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Entity.hpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
@@ -101,6 +104,9 @@
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/SceneNode.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Aircraft.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Entity.cpp">

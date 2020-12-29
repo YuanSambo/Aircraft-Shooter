@@ -17,7 +17,7 @@ set(SOURCE  source/main.cpp
             include/ResourceManager.inl
             include/Entity.hpp
             include/SceneNode.hpp
-            include/ResourceIdentifiers.hpp)
+            include/ResourceIdentifiers.hpp source/Aircraft.cpp include/Aircraft.hpp)
 
 
 add_executable(${PROJECT_NAME} ${SOURCE})
