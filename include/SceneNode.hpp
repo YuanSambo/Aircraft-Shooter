@@ -24,14 +24,20 @@ public:
 
     //////////////////////////////////////
     /// \brief Attach node as a child
-    //  \param Child to be attached
+    ///
+    /// \param Child to be attached
+    ///
     //////////////////////////////////////
     void            attachChild(Ptr child);
 
-    //////////////////////////////////////
-    /// \brief Detach child from the node
-    //  \param Child node to be detached
-    //////////////////////////////////////
+
+
+    ///////////////////////////////
+    /// \param node to be detached
+    ///
+    /// \return Detached child
+    ///
+    /////////////////////////////
     Ptr             detachChild(const SceneNode& node);
 
 private:

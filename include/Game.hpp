@@ -17,19 +17,22 @@
 
 //////////////////////////////////////////
 /// \brief Game engine
+///
 /////////////////////////////////////////
 class Game {
 
 public:
 
     //////////////////////////////////////////
-    /// \brief  Gets the instance of the game.
-    /// \return The instance of the game.
+    /// \brief  Gets the instance of the game
+    /// \return The instance of the game
+    ///
     /////////////////////////////////////////
     static  Game* instance();
 
     //////////////////////////////////////////
     /// \brief Starts the game loop.
+    ///
     /////////////////////////////////////////
     void            run();
 
@@ -60,38 +63,47 @@ private:
 
     //////////////////////////////////////////
     /// \brief Constructor
+    ///
     /////////////////////////////////////////
                         Game();
     //////////////////////////////////////////
     /// \brief Destructor
+    ///
     /////////////////////////////////////////
                         ~Game();
 
     //////////////////////////////////////////
-    /// \brief Process the events inside the game.
+    /// \brief Handles event inside the game.
+    ///
     /////////////////////////////////////////
     void        processEvents();
 
     //////////////////////////////////////////
     /// \brief Updates the game logic.
-    /// \param Elapsed time since the last frame.
+    ///
+    /// \param deltaTime
+    ///
     /////////////////////////////////////////
     void        update(sf::Time deltaTime);
 
     //////////////////////////////////////////
     /// \brief Renders graphics on the window.
+    ///
     /////////////////////////////////////////
     void        render();
 
     //////////////////////////////////////////
     /// \brief Handles player keyboard input
-    /// \param Pressed keyboard key.
-    /// \param If the key is pressed.
+    ///
+    /// \param KeyboardKey
+    /// \param isPressed
+    ///
     /////////////////////////////////////////
     void        handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
 
     //////////////////////////////////////////
     /// \brief Initialize objects
+    ///
     /////////////////////////////////////////
     void        init();
 

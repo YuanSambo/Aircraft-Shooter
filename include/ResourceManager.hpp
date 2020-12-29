@@ -24,33 +24,37 @@ public:
 
     //////////////////////////////////////////
     /// \brief Loads resource
-    /// \param Enum id
-    /// \param Filename of the resource
+    /// \param id
+    /// \param Filename
+    ///
     /////////////////////////////////////////
     void                             load(Identifier id,const std::string& filename);
 
     ////////////////////////////////////////////
     /// \brief Loads resource with two parameters
-    /// \param Enum id
-    /// \param Filename of the resource
-    /// \param Optional second parameter
+    ///
+    /// \param id
+    /// \param filename
+    /// \param secondParam
+    ///
     /////////////////////////////////////////////
     template<typename Param>
     void                              load(Identifier id, const std::string& filename, const Param& secondParam);
 
     //////////////////////////////////////////
     /// \brief Loads resource
-    /// \param Enum id
-    /// \param Filename of the resource
-    /// \return Resource reference
+    /// \param id
+    /// \return Resource& Reference to the resource
+    ///
     /////////////////////////////////////////
     Resource&                         get(Identifier id);
 
     //////////////////////////////////////////
     /// \brief Get function const overload
-    /// \param Enum id
-    /// \param Filename of the resource
-    /// \return Resource reference
+    ///
+    /// \param id
+    /// \return Resource& Reference to the resource
+    ///
     /////////////////////////////////////////
     const Resource&                   get(Identifier id) const;
 
@@ -59,10 +63,13 @@ private:
             std::unique_ptr<Resource>>      m_resourceMap;
 
 private:
-
-    //////////////////////////////////////////////
+    ///////////////////////////////////////////////
     /// \brief Insert resource to the m_resourceMap
-    //////////////////////////////////////////////
+    ///
+    /// \param id
+    /// \param resource
+    ///
+    ///////////////////////////////////////////////
     void                              insertResource(Identifier id,std::unique_ptr<Resource> resource);
 };
 

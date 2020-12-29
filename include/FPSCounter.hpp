@@ -15,7 +15,9 @@ namespace yu {
 
     //////////////////////////////////////////
     /// \brief Displays the frames per second of the game
-    //  and time of the last frame update.
+    ///
+    ///  and time of the last frame update.
+    ///
     /////////////////////////////////////////
 
     class FPSCounter  {
@@ -24,14 +26,18 @@ namespace yu {
         FPSCounter();
 
         //////////////////////////////////////////
-        /// \brief Sets the text to be changed.
-        //  \param Text where the FPS will be displayed.
+        /// \brief Sets the text to be changed
+        ///
+        /// \param Text where the FPS will be displayed
+        ///
         /////////////////////////////////////////
         void setText(sf::Text &text);
 
         //////////////////////////////////////////
         /// \brief Updates the fps display
-        //  \param Elapsed time since the last frame.
+        ///
+        ///  \param Time elapsed since the last frame
+        ///
         /////////////////////////////////////////
         void updateFrame( sf::Time deltaTime);
 
