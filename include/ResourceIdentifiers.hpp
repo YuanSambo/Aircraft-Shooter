@@ -16,26 +16,25 @@
 /////////////////////////////////////////
 
 namespace sf{
+
     class Texture;
     class Font;
 }
-namespace Textures{
-    enum ID{
+
+    enum class Textures{
         Eagle,
         Raptor,
         Desert,
     };
-}
 
-namespace Fonts{
-    enum ID{
+
+    enum class Fonts{
         Sansation,
     };
-}
 
 template<typename Resource, typename Identifer>
 class ResourceManager;
 
-typedef ResourceManager<sf::Texture,Textures::ID> TextureManager;
-typedef ResourceManager<sf::Font,Fonts::ID> FontManager;
+typedef ResourceManager<sf::Texture,Textures> TextureManager;
+typedef ResourceManager<sf::Font,Fonts> FontManager;
 #endif //AIRCRAFT_SHOOTER_RESOURCEIDENTIFIERS_HPP
