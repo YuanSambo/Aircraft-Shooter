@@ -1,9 +1,9 @@
 ///////////////////////////////////////////////////////////////
 //  World.hpp
 //  Aircraft-Shooter
-//  
-//  Created by Yuan Sambo on 30/12/2020                         
-//  Copyright (c) 2020 Yuan Sambo. All rights reserved.     
+//
+//  Created by Yuan Sambo on 30/12/2020
+//  Based on SFML Game Development Book
 ////////////////////////////////////////////////////////////////
 
 #ifndef AIRCRAFT_SHOOTER_WORLD_HPP
