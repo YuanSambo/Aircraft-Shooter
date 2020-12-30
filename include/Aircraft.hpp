@@ -16,14 +16,14 @@
 class Aircraft : public Entity {
 
 public:
-     enum class Type{
+     enum  Type{
         Eagle,
         Raptor,
     };
 public:
                 Aircraft(Type type, const TextureManager& textures);
 private:
-    void        drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const override;
+     void        drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const override;
 
 private:
     Type            m_type;

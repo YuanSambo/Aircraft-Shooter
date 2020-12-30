@@ -106,6 +106,12 @@
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/SceneNode.hpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/SpriteNode.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/World.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Aircraft.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
@@ -119,6 +125,12 @@
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/SceneNode.cpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/SpriteNode.cpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/World.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/main.cpp">

@@ -14,8 +14,15 @@
     /////////////////////////////////////////
     int main() {
 
-        Game::instance()->run();
 
+        try{
+            Game::instance()->run();
+
+        } catch (std::runtime_error& e) {
+
+            printf("Exception %s \n",e.what());
+
+        }
 
         return EXIT_SUCCESS;
    }

@@ -5,11 +5,15 @@ set(CMAKE_CXX_STANDARD 17)
 set(SFML_DIR "SFML-2.5.1/build")
 
 
-set(SOURCE  source/main.cpp
+set(SOURCE
+            source/main.cpp
             source/Game.cpp
             source/FPSCounter.cpp
             source/Entity.cpp
             source/SceneNode.cpp
+            source/Aircraft.cpp
+            source/SpriteNode.cpp
+            source/World.cpp
 
             include/ResourceManager.hpp
             include/Game.hpp
@@ -17,7 +21,10 @@ set(SOURCE  source/main.cpp
             include/ResourceManager.inl
             include/Entity.hpp
             include/SceneNode.hpp
-            include/ResourceIdentifiers.hpp source/Aircraft.cpp include/Aircraft.hpp)
+            include/ResourceIdentifiers.hpp
+            include/Aircraft.hpp
+            include/SpriteNode.hpp
+            include/World.hpp)
 
 
 add_executable(${PROJECT_NAME} ${SOURCE})

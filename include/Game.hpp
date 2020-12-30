@@ -14,14 +14,27 @@
 #include "ResourceManager.hpp"
 #include "FPSCounter.hpp"
 #include "ResourceIdentifiers.hpp"
+#include "World.hpp"
 
 //////////////////////////////////////////
 /// \brief Game engine
 ///
 /////////////////////////////////////////
-class Game {
+class Game : private sf::NonCopyable {
 
 public:
+
+    //////////////////////////////////////////
+    /// \brief Constructor
+    ///
+    /////////////////////////////////////////
+    Game();
+
+    //////////////////////////////////////////
+    /// \brief Destructor
+    ///
+    /////////////////////////////////////////
+    ~Game();
 
     //////////////////////////////////////////
     /// \brief  Gets the instance of the game
@@ -36,21 +49,20 @@ public:
     /////////////////////////////////////////
     void            run();
 
+
+
 private:
 
     static Game*                Instance;
-    static const float          PlayerSpeed;
     static const sf::Time       TimePerFrame;
 
-    TextureManager             m_textureManager;
     FontManager                m_fontManager;
 
     sf::RenderWindow    m_window;
-    sf::Sprite          m_player;
-    sf::Sprite          m_landScape;
     sf::Text            m_fps;
 
     yu::FPSCounter      m_fpsCounter;
+    World               m_world;
 
 
     bool    m_IsMovingUp;
@@ -61,16 +73,6 @@ private:
 
 private:
 
-    //////////////////////////////////////////
-    /// \brief Constructor
-    ///
-    /////////////////////////////////////////
-                        Game();
-    //////////////////////////////////////////
-    /// \brief Destructor
-    ///
-    /////////////////////////////////////////
-                        ~Game();
 
     //////////////////////////////////////////
     /// \brief Handles event inside the game.
@@ -100,12 +102,6 @@ private:
     ///
     /////////////////////////////////////////
     void        handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
-
-    //////////////////////////////////////////
-    /// \brief Initialize objects
-    ///
-    /////////////////////////////////////////
-    void        init();
 
 
 

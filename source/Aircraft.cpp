@@ -12,6 +12,7 @@
 Textures toTextureID(Aircraft::Type type){
 
     switch(type){
+
         case Aircraft::Type::Eagle:
             return Textures::Eagle;
 
@@ -25,9 +26,11 @@ Aircraft::Aircraft(Aircraft::Type type, const TextureManager &textures):
         m_type(type),
         m_sprite(textures.get(toTextureID(type))){
 
+
     // Sprite's local bounds
     sf::FloatRect bounds = m_sprite.getLocalBounds();
 
+    // Centers the sprite
     m_sprite.setOrigin(bounds.width/2.f,bounds.height/2.f);
 
 }

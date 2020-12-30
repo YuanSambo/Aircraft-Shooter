@@ -11,6 +11,10 @@
 #include "SFML/Graphics.hpp"
 #include "SceneNode.hpp"
 
+//////////////////////////////////////////////
+/// \brief  Denotes a game element in the world
+///
+//////////////////////////////////////////////
 class Entity : public SceneNode{
 public:
     //////////////////////////////////////
@@ -38,9 +42,11 @@ public:
     //////////////////////////////////////
     sf::Vector2f        getVelocity() const;
 
+     void               updateCurrent(sf:: Time deltaTime) override;
+
+
 private:
     sf::Vector2f        m_velocity;
-
 };
 
 
