@@ -53,7 +53,7 @@ public:
 
 private:
 
-    static Game*                Instance;
+    static Game*                m_instance;
     static const sf::Time       TimePerFrame;
 
     FontManager                m_fontManager;
@@ -65,10 +65,11 @@ private:
     World               m_world;
 
 
-    bool    m_IsMovingUp;
-    bool    m_IsMovingDown;
-    bool    m_IsMovingRight;
-    bool    m_IsMovingLeft;
+    bool    m_isMovingUp;
+    bool    m_isMovingDown;
+    bool    m_isMovingRight;
+    bool    m_isMovingLeft;
+    bool    m_isPaused;
 
 
 private:
@@ -93,17 +94,6 @@ private:
     ///
     /////////////////////////////////////////
     void        render();
-
-    //////////////////////////////////////////
-    /// \brief Handles player keyboard input
-    ///
-    /// \param KeyboardKey
-    /// \param isPressed
-    ///
-    /////////////////////////////////////////
-    void        handlePlayerInput(sf::Keyboard::Key key, bool isPressed);
-
-
 
 };
 

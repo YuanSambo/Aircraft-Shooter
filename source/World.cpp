@@ -35,6 +35,7 @@ void World::update(sf::Time deltaTime) {
     sf::Vector2f position = m_playerAircraft->getPosition();
     sf::Vector2f velocity = m_playerAircraft->getVelocity();
 
+    // Check bounds
     if (position.x <= m_worldBounds.left + 150
         || position.x >= m_worldBounds.left + m_worldBounds.width - 150)
     {
@@ -54,9 +55,9 @@ void World::draw() {
 
 void World::loadTextures() {
 
-    m_textureManager.load(Textures::Eagle, "res/Textures/Eagle.png");
-    m_textureManager.load(Textures::Raptor, "res/Textures/Raptor.png");
-    m_textureManager.load(Textures::Desert,"res/Textures/Desert.png");
+    m_textureManager.load(Textures::Eagle, "res/Textures/eagle.png");
+    m_textureManager.load(Textures::Raptor, "res/Textures/raptor.png");
+    m_textureManager.load(Textures::Desert,"res/Textures/desert.png");
 }
 
 void World::buildScene() {
@@ -93,11 +94,13 @@ void World::buildScene() {
         // Left aircraft
         std::unique_ptr<Aircraft> leftEscort(new Aircraft(Aircraft::Type::Raptor,m_textureManager));
         leftEscort->setPosition(-80.f, 50.f);
+        leftEscort->setScale(0.8f,0.8f);
         m_playerAircraft -> attachChild(std::move(leftEscort));
 
         // Right aircraft
         std::unique_ptr<Aircraft> rightEscort(new Aircraft(Aircraft::Type::Raptor,m_textureManager));
         rightEscort->setPosition(80.f, 50.f);
+        rightEscort->setScale(0.8f,0.8f);
         m_playerAircraft -> attachChild(std::move(rightEscort));
 
 }

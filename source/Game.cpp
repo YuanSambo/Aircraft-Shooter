@@ -10,15 +10,16 @@
 
 
 const sf::Time Game::TimePerFrame = sf::seconds(1.f/60.f);
-Game* Game:: Instance = nullptr;
+Game* Game:: m_instance = nullptr;
 
 Game::Game()
 : m_window(sf::VideoMode(640, 480), "Aircraft Shooter",sf::Style::Close)
-    , m_IsMovingLeft(false)
-    , m_IsMovingRight(false)
-    , m_IsMovingUp(false)
-    , m_IsMovingDown(false)
-    ,m_world(m_window)
+    , m_isMovingLeft(false)
+    , m_isMovingRight(false)
+    , m_isMovingUp(false)
+    , m_isMovingDown(false)
+    , m_isPaused(false)
+    , m_world(m_window)
     {
     m_fontManager.load(Fonts::Sansation,"res/Fonts/Sansation.ttf");
 
@@ -37,10 +38,10 @@ Game::Game()
 
 Game* Game::instance() {
 
-    if(Game::Instance == nullptr)
-        Instance = new Game();
+    if(Game::m_instance == nullptr)
+        m_instance = new Game();
 
-    return Instance;
+    return m_instance;
 }
 
 void Game::run() {
@@ -58,8 +59,11 @@ void Game::run() {
 
             timeSinceLastUpdate -= TimePerFrame;
 
+            if(!m_isPaused)
+                update(TimePerFrame);
+
             processEvents();
-            update(TimePerFrame);
+
         }
 
         m_fpsCounter.updateFrame(deltaTime);
@@ -74,15 +78,16 @@ void Game::processEvents() {
     while (m_window.pollEvent(event)) {
 
         switch(event.type){
-            case sf::Event::KeyPressed:
-                handlePlayerInput(event.key.code,true);
+            case sf::Event::GainedFocus:
+                m_isPaused = false;
                 break;
-            case sf::Event::KeyReleased:
-                handlePlayerInput(event.key.code,false);
+            case sf::Event::LostFocus:
+                m_isPaused=true;
                 break;
-                case sf::Event::Closed:
-                    m_window.close();
-                    break;
+            case sf::Event::Closed:
+                m_window.close();
+                break;
+
         }
     }
 }
@@ -101,22 +106,11 @@ void Game::render() {
     m_window.draw(m_fps);
     m_window.display();
 }
-void Game::handlePlayerInput(sf::Keyboard::Key key, bool isPressed) {
-
-    // Player controls
-    if(key == sf::Keyboard::W)
-        m_IsMovingUp = isPressed;
-    else if (key == sf::Keyboard::S)
-        m_IsMovingDown = isPressed;
-    else if (key == sf::Keyboard::A)
-        m_IsMovingLeft = isPressed;
-    else if (key == sf::Keyboard::D)
-        m_IsMovingRight = isPressed;
-}
 
 Game::~Game() {
-    delete Instance;
+
 }
+
 
 
 
