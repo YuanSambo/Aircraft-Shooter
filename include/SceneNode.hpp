@@ -10,6 +10,7 @@
 #define AIRCRAFT_SHOOTER_SCENENODE_HPP
 
 #include "SFML/Graphics.hpp"
+#include "Command.hpp"
 #include <memory>
 #include <vector>
 
@@ -24,6 +25,8 @@ private sf::NonCopyable{
 
 public:
     typedef std::unique_ptr<SceneNode> Ptr;
+
+    void                               onCommand(const Command& command,sf::Time deltaTime);
 
 public:
     SceneNode();
@@ -46,6 +49,7 @@ public:
     ///
     /////////////////////////////
     Ptr             detachChild(const SceneNode& node);
+
 
     sf::Transform   getWorldTransform() const;
     sf::Vector2f    getWorldPosition() const;
@@ -87,6 +91,9 @@ private:
     ///
     ////////////////////////////
     void                updateChildren(sf::Time deltaTime);
+
+    virtual unsigned  int             getCategory() const;
+
 
 private:
 

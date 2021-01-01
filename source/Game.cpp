@@ -20,6 +20,7 @@ Game::Game()
     , m_isMovingDown(false)
     , m_isPaused(false)
     , m_world(m_window)
+    , m_player()
     {
     m_fontManager.load(Fonts::Sansation,"res/Fonts/Sansation.ttf");
 
@@ -62,34 +63,27 @@ void Game::run() {
             if(!m_isPaused)
                 update(TimePerFrame);
 
-            processEvents();
 
         }
-
+        processInput();
         m_fpsCounter.updateFrame(deltaTime);
         render();
     }
 }
 
 
-void Game::processEvents() {
+void Game::processInput() {
+
+    CommandQueue&   commands = m_world.getCommandQueue();
 
     sf::Event event{};
     while (m_window.pollEvent(event)) {
 
-        switch(event.type){
-            case sf::Event::GainedFocus:
-                m_isPaused = false;
-                break;
-            case sf::Event::LostFocus:
-                m_isPaused=true;
-                break;
-            case sf::Event::Closed:
-                m_window.close();
-                break;
-
-        }
+        m_player.handleEvent(event,commands);
+        handleWindowEvent(event);
     }
+
+    m_player.handleRealTimeInput(commands);
 }
 
 void Game::update(sf::Time deltaTime) {
@@ -104,11 +98,28 @@ void Game::render() {
 
     m_window.setView(m_window.getDefaultView());
     m_window.draw(m_fps);
+
     m_window.display();
 }
 
 Game::~Game() {
 
+    delete m_instance;
+}
+
+void Game::handleWindowEvent(sf::Event event) {
+
+    switch(event.type){
+        case sf::Event::GainedFocus:
+            m_isPaused = false;
+            break;
+        case sf::Event::LostFocus:
+            m_isPaused=true;
+            break;
+        case sf::Event::Closed:
+            m_window.close();
+            break;
+    }
 }
 
 

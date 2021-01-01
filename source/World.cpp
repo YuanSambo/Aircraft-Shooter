@@ -29,6 +29,10 @@ World::World(sf::RenderWindow & window)
 }
 void World::update(sf::Time deltaTime) {
 
+
+
+
+
     // Scrolls the background
     m_worldView.move(0.f, m_scrollSpeed * deltaTime.asSeconds());
 
@@ -43,6 +47,11 @@ void World::update(sf::Time deltaTime) {
         velocity.x = -velocity.x;
         m_playerAircraft->setVelocity(velocity);
     }
+
+    // Sends command to scene graph
+    while(!m_commandQueue.isEmpty())
+        m_sceneGraph.onCommand(m_commandQueue.pop(),deltaTime);
+
 
     m_sceneGraph.update(deltaTime);
 }
@@ -103,6 +112,10 @@ void World::buildScene() {
         rightEscort->setScale(0.8f,0.8f);
         m_playerAircraft -> attachChild(std::move(rightEscort));
 
+}
+
+CommandQueue &World::getCommandQueue() {
+    return m_commandQueue;
 }
 
 

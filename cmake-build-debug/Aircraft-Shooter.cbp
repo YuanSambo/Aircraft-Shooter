@@ -85,6 +85,15 @@
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Aircraft.hpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Category.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Command.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/CommandQueue.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Entity.hpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
@@ -92,6 +101,9 @@
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Game.hpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/Player.hpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/include/ResourceIdentifiers.hpp">
@@ -115,6 +127,12 @@
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Aircraft.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Command.cpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/CommandQueue.cpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Entity.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
@@ -122,6 +140,9 @@
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Game.cpp">
+			<Option target="Aircraft-Shooter"/>
+		</Unit>
+		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/Player.cpp">
 			<Option target="Aircraft-Shooter"/>
 		</Unit>
 		<Unit filename="/Users/Yuan/Programming/C++/Aircraft-Shooter/source/SceneNode.cpp">

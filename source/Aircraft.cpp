@@ -8,6 +8,7 @@
 
 #include "../include/Aircraft.hpp"
 #include "../include/ResourceManager.hpp"
+#include "../include/Category.hpp"
 
 Textures toTextureID(Aircraft::Type type){
 
@@ -38,5 +39,18 @@ Aircraft::Aircraft(Aircraft::Type type, const TextureManager &textures):
 void Aircraft::drawCurrent(sf::RenderTarget& target, sf::RenderStates states) const {
 
     target.draw(m_sprite,states);
+
+}
+
+unsigned int Aircraft::getCategory() const {
+
+    switch (m_type) {
+
+        case Eagle:
+            return Category::PlayerAircraft;
+        default:
+            return Category::EnemyAircraft;
+
+    }
 
 }

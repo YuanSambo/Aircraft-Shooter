@@ -14,6 +14,9 @@ set(SOURCE
             source/Aircraft.cpp
             source/SpriteNode.cpp
             source/World.cpp
+            source/Command.cpp
+            source/CommandQueue.cpp
+            source/Player.cpp
 
             include/ResourceManager.hpp
             include/Game.hpp
@@ -24,7 +27,11 @@ set(SOURCE
             include/ResourceIdentifiers.hpp
             include/Aircraft.hpp
             include/SpriteNode.hpp
-            include/World.hpp)
+            include/World.hpp
+            include/Category.hpp
+            include/Command.hpp
+            include/CommandQueue.hpp
+            include/Player.hpp)
 
 
 add_executable(${PROJECT_NAME} ${SOURCE})

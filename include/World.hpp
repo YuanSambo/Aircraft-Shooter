@@ -15,6 +15,7 @@
 #include "ResourceIdentifiers.hpp"
 #include "array"
 #include "Aircraft.hpp"
+#include "CommandQueue.hpp"
 
 class World : private sf::NonCopyable {
 
@@ -24,6 +25,8 @@ public:
     void                update(sf::Time deltaTime);
 
     void                draw();
+
+    CommandQueue&      getCommandQueue();
 
 private:
 
@@ -52,6 +55,7 @@ private:
     sf::RenderWindow&           m_window;
     sf::View                    m_worldView;
     SceneNode                   m_sceneGraph;
+    CommandQueue                m_commandQueue;
     std::array<SceneNode *,
             LayerCount>                 m_sceneLayers;
 

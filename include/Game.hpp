@@ -15,6 +15,7 @@
 #include "FPSCounter.hpp"
 #include "ResourceIdentifiers.hpp"
 #include "World.hpp"
+#include "Player.hpp"
 
 //////////////////////////////////////////
 /// \brief Game engine
@@ -63,6 +64,7 @@ private:
 
     yu::FPSCounter      m_fpsCounter;
     World               m_world;
+    Player              m_player;
 
 
     bool    m_isMovingUp;
@@ -76,10 +78,10 @@ private:
 
 
     //////////////////////////////////////////
-    /// \brief Handles event inside the game.
+    /// \brief Handles input inside the game.
     ///
     /////////////////////////////////////////
-    void        processEvents();
+    void        processInput();
 
     //////////////////////////////////////////
     /// \brief Updates the game logic.
@@ -94,6 +96,12 @@ private:
     ///
     /////////////////////////////////////////
     void        render();
+
+    //////////////////////////////////////////
+    /// \brief Handles windows event
+    ///
+    /////////////////////////////////////////
+    void        handleWindowEvent(sf::Event event);
 
 };
 
