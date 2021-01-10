@@ -54,3 +54,12 @@ unsigned int Aircraft::getCategory() const {
     }
 
 }
+
+void Aircraft::accelerate(float vx, float vy) {
+    setVelocity(getVelocity().x + vx, getVelocity().y+vy);
+}
+
+void Aircraft::accelerate(sf::Vector2f velocity) {
+    setVelocity(getVelocity() +velocity );
+
+}

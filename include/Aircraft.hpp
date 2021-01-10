@@ -22,6 +22,8 @@ public:
     };
 public:
                         Aircraft(Type type, const TextureManager& textures);
+                        void accelerate(float vx , float vy);
+                        void accelerate( sf::Vector2f velocity);
 private:
 
     ////////////////////////////

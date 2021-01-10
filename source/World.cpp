@@ -6,6 +6,7 @@
 //  Based on SFML Game Development Book
 ////////////////////////////////////////////////////////////////
 
+#include <cmath>
 #include "../include/World.hpp"
 #include "../include/SpriteNode.hpp"
 
@@ -30,30 +31,43 @@ World::World(sf::RenderWindow & window)
 void World::update(sf::Time deltaTime) {
 
 
-
-
-
     // Scrolls the background
     m_worldView.move(0.f, m_scrollSpeed * deltaTime.asSeconds());
+    m_playerAircraft->setVelocity(0.f,0.f);
 
-    sf::Vector2f position = m_playerAircraft->getPosition();
     sf::Vector2f velocity = m_playerAircraft->getVelocity();
 
-    // Check bounds
-    if (position.x <= m_worldBounds.left + 150
-        || position.x >= m_worldBounds.left + m_worldBounds.width - 150)
-    {
-        // Flips velocity
-        velocity.x = -velocity.x;
-        m_playerAircraft->setVelocity(velocity);
-    }
 
     // Sends command to scene graph
     while(!m_commandQueue.isEmpty())
         m_sceneGraph.onCommand(m_commandQueue.pop(),deltaTime);
 
 
+    if(velocity.x != 0.f && velocity.y != 0.f )
+        m_playerAircraft->setVelocity(velocity/std::sqrt(2.f));
+
+
+
+    m_playerAircraft->accelerate(0.f,m_scrollSpeed);
     m_sceneGraph.update(deltaTime);
+
+    // Keep player's position inside screen bounds.
+
+    sf::FloatRect viewBounds(
+            m_worldView.getCenter() - m_worldView.getSize() / 2.f,
+            m_worldView.getSize());
+    const float borderDistance = 80.f;
+
+    sf::Vector2f position = m_playerAircraft->getPosition();
+    position.x = std::max(position.x,
+                          viewBounds.left + borderDistance);
+    position.x = std::min(position.x,
+                          viewBounds.left + viewBounds.width - borderDistance);
+    position.y = std::max(position.y,
+                          viewBounds.top + borderDistance);
+    position.y = std::min(position.y,
+                          viewBounds.top + viewBounds.height - borderDistance);
+    m_playerAircraft->setPosition(position);
 }
 
 void World::draw() {
